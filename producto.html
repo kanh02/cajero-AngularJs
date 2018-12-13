@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <p>
+        Nombre: <br>
+        <input type="text" ng-model="lista.nombre">
+    </p>
+    <p>
+        Precio: <br>
+        <input type="text" ng-model="lista.precio">
+    </p>
+    <input type="button" value="Añadir" ng-click="lista.addProducto()">
+
+
+    <table cellspacing="0">
+            <thead>
+                <tr>
+                    <td>Producto</td>
+                    <td>Precio</td>
+                </tr>
+            </thead>
+            <tr ng-repeat="producto in lista.productos">
+                <td>{{producto.nombre}}</td>
+                <td>${{producto.precio}}</td>
+            </tr>
+        </table>
+</body>
+</html>
